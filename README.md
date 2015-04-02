@@ -4,7 +4,7 @@
 
 Examples of classic sort algorithms written in Ruby.
 
-`example.rb` demonstrates usage.
+Check out the `/test/sort/` directory for examples of usage.
 
 ## Algorithms
 
