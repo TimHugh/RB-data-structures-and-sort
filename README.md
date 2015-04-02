@@ -4,6 +4,8 @@
 
 Examples of classic sort algorithms written in Ruby.
 
+`example.rb` demonstrates usage.
+
 ## Algorithms
 
 ### [Insertion Sort](http://en.wikipedia.org/wiki/Insertion_sort) : `lib/insertionsort.rb`
