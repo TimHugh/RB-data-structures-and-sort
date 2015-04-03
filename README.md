@@ -16,4 +16,4 @@ Insertion sort has a best case run time of `O(n)` and a worst-case runtime of `O
 
 ### [Merge Sort]() : `lib/mergesort.rb`
 
-Merge sort has a constant run time of `O(n log n)`--sort of. For the most part, it is not adaptive, but it will merge in a set without checking it if the other set being merged runs out of values. Memory efficiency is `O(n)`, or more specifically `O(2n)`. Initially, it creates `n` additional arrays, then an additional `n/2` + `n/4` + ... `n/n`.
+Merge sort has a constant run time of `O(n log n)`--sort of. For the most part this implementation is not adaptive, but it will merge in a set without checking it if the other set being merged runs out of values. Memory efficiency is `O(n)`, or more specifically `O(2n)`. Initially, it creates `n` additional arrays, then an additional `n/2` + `n/4` + ... `n/n`.
