@@ -19,7 +19,7 @@ namespace :benchmark do
     Benchmark.bmbm do |x|
       x.report("Sorted array") { MergeSort.sort(sorted_array) }
       x.report("Random array") { MergeSort.sort(random_array) }
-      x.report("Reverse array") { MergeSort.sort(random_array) }
+      x.report("Reverse array") { MergeSort.sort(reverse_array) }
     end
   end
 end
