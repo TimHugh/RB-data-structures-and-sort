@@ -10,6 +10,8 @@ describe LinkedList do
   end
 
   it 'stores new values at the front' do
+    list.add(5)
+    list.first.must_equal 5
   end
 
   it 'returns the correct node when a value is searched' do
