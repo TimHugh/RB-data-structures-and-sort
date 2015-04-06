@@ -1,11 +1,11 @@
 require 'test_helper'
-require 'mergesort'
+require 'merge_sort'
 
 describe MergeSort do
   it 'sorts numbers correctly' do
     start_nums = array_of_random_numbers
     expected_nums = start_nums.sort
 
-    assert_equal MergeSort.sort(start_nums), expected_nums
+    assert_equal expected_nums, MergeSort.sort(start_nums)
   end
 end
