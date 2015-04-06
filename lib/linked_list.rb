@@ -24,6 +24,17 @@ class LinkedList
     @next.search(value)
   end
 
+  def remove(value)
+    return nil unless @next
+    if @next.value == value
+      node = @next
+      @next = @next.next
+      return node.value
+    end
+
+    @next.remove(value)
+  end
+
   def to_s
     string = ""
     string += @value.to_s if @value
