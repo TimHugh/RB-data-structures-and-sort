@@ -32,5 +32,6 @@ describe LinkedList do
   end
 
   it 'creates a comma-separated string when the to_s function is called' do
+    @list.to_s.must_equal "7, 4, 2"
   end
 end
