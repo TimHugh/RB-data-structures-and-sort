@@ -15,9 +15,11 @@ describe LinkedList do
   end
 
   it 'returns the correct node when a value is searched' do
+    @list.search(2).value.must_equal 2
   end
 
   it 'returns null when searching for a value that is not present' do
+    @list.search(5).must_equal nil
   end
 
   it 'correctly removes values' do
