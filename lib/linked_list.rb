@@ -16,4 +16,11 @@ class LinkedList
   def first
     @next.value
   end
+
+  def search(value)
+    return self if @value == value
+    return nil unless @next
+
+    @next.search(value)
+  end
 end
