@@ -3,15 +3,15 @@ require 'linked_list'
 
 describe LinkedList do
   before do
-    list = LinkedList.new
-    list.add(2)
-    list.add(4)
-    list.add(7)
+    @list = LinkedList.new
+    @list.add(2)
+    @list.add(4)
+    @list.add(7)
   end
 
   it 'stores new values at the front' do
-    list.add(5)
-    list.first.must_equal 5
+    @list.add(5)
+    @list.first.must_equal 5
   end
 
   it 'returns the correct node when a value is searched' do
