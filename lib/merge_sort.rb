@@ -6,7 +6,7 @@ class MergeSort
     while array.size > 1
       new_array = []
       array.each_slice(2) do |set1, set2|
-        new_array << (set2 ? merge(set1, set2) : set1)
+        new_array << merge(*[set1, set2].compact)
       end
       # the next loop should iterate over the result of this loop
       array = new_array
@@ -17,10 +17,10 @@ class MergeSort
 
   private
 
-  def self.merge(set1, set2)
+  def self.merge(set1, set2 = [])
     result = []
     # until one of the sets runs out, add the lower of the two first elements from each set to the return array
-    until set1.empty? || set2.empty?
+    unless set1.empty? || set2.empty?
       result << (set1.first <= set2.first ? set1.shift : set2.shift)
     end
     # dump the remaining elements into the return array
