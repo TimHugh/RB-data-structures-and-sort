@@ -23,12 +23,16 @@ describe LinkedList do
   end
 
   it 'correctly removes values' do
+    @list.remove(4)
+    @list.to_s.must_equal "7, 2"
   end
 
   it 'returns a value when it removes it from the list' do
+    @list.remove(2).must_equal 2
   end
 
   it 'returns null when removing a value that is not present' do
+    @list.remove(5).must_equal nil
   end
 
   it 'creates a comma-separated string when the to_s function is called' do
