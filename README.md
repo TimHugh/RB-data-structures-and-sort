@@ -23,3 +23,13 @@ Merge sort has a constant run time of `O(n log n)`--sort of. For the most part t
 ### [Linked List](http://en.wikipedia.org/wiki/Linked_list): `lib/linked_list.rb'
 
 The linked list is a lightweight storage object that stores data linearly in the order it was added. Adding is a `O( 1 )` time operation, but searching and removal are both `O( n )` (or some fraction of n).
+
+
+### [Stack](http://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29): `lib/stack.rb`
+
+The stack is a very lightweight, efficient structure. It stores data using the LIFO method, using `push(value)` and `pop()` functions to add and remove elements. Both operations are done in `O( 1 )` time.
+
+### [Queue](http://en.wikipedia.org/wiki/Queue_%28abstract_data_type%29): `lib/queue.rb`
+
+The queue is similar to a stack, but uses the FIFO method with `enqueue(value)` and `dequeue()`. Again, both operations are done in `O( 1 )` time.
+
