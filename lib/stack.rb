@@ -9,7 +9,7 @@ class Stack
 
   def push(value)
     node = Node.new(value, @head)
-    @head = node unless @head
+    @head = node
     @size += 1
   end
 
