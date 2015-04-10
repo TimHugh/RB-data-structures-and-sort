@@ -10,6 +10,11 @@ describe HashTable do
     @hashtable.size.must_equal 0
   end
 
+  it 'converts strings to hash value based on summed ascii value of characters in a key' do
+    value = @hashtable.send(:hashValue, :one)
+    value.must_equal (':'.ord + 'o'.ord + 'n'.ord + 'e'.ord)
+  end
+
   it 'can store and recall values' do
     skip
 
