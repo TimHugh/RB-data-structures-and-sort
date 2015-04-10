@@ -1,5 +1,6 @@
 class HashTable
   attr_reader :size
+  attr_reader :table
 
   Node = Struct.new(:key, :value, :next, :length)
 
