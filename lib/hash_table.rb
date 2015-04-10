@@ -17,6 +17,10 @@ class HashTable
     end
   end
 
+  def [](key)
+    find(key)
+  end
+
   protected
 
   def add(key, value)
@@ -50,6 +54,14 @@ class HashTable
     node.next = node.next.next
     @size -= 1
     out
+  end
+
+  def find(key)
+    node = @table[keyToHash key]
+
+    node = node.next while !node.nil? && node.key != key
+
+    node.nil? ? nil : node.value
   end
 
   def keyToHash(key)
