@@ -3,9 +3,9 @@ class HashTable
 
   Node = Struct.new(:key, :value, :next, :length)
 
-  def initialize
+  def initialize(table_size = 100)
     @size = 0
-    @max_size = 10
+    @table_size = table_size
     @table = []
   end
 
@@ -63,7 +63,7 @@ class HashTable
   end
 
   def key_to_hash(key)
-    hash_value(key) % @max_size
+    hash_value(key) % @table_size
   end
 
   def hash_value(key)
