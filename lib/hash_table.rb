@@ -5,7 +5,7 @@ class HashTable
 
   def initialize
     @size = 0
-    @maxSize = 10
+    @max_size = 10
     @table = []
   end
 
@@ -25,7 +25,7 @@ class HashTable
 
   def add(key, value)
     node = Node.new(key, value)
-    hash = keyToHash(key)
+    hash = key_to_hash(key)
 
     node.next = @table[hash]
     node.length = @table[hash].nil? ? 1 : @table[hash].length + 1
@@ -35,7 +35,7 @@ class HashTable
   end
 
   def remove(key)
-    hash = keyToHash key
+    hash = key_to_hash key
 
     node = @table[hash]
     return if node.nil?
@@ -45,9 +45,7 @@ class HashTable
       return node.value
     end
 
-    while node.next && node.next.key != key
-      node = node.next
-    end
+    node = node.next while node.next && node.next.key != key
     return if node.nil?
 
     out = node.next.value
@@ -57,18 +55,18 @@ class HashTable
   end
 
   def find(key)
-    node = @table[keyToHash key]
+    node = @table[key_to_hash key]
 
     node = node.next while !node.nil? && node.key != key
 
     node.nil? ? nil : node.value
   end
 
-  def keyToHash(key)
-    hashValue(key) % @maxSize
+  def key_to_hash(key)
+    hash_value(key) % @max_size
   end
 
-  def hashValue(key)
-    key.inspect.split('').inject(0) { |memo, char| memo += char.ord }
+  def hash_value(key)
+    key.inspect.split('').inject(0) { |a, e| a + e.ord }
   end
 end

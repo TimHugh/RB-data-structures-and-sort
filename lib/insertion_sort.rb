@@ -1,20 +1,18 @@
 class InsertionSort
-  def self.sort(numbers_array)
-    sort! numbers_array.clone
+  def self.sort(numbers)
+    sort! numbers.clone
   end
 
-  def self.sort!(numbers_array)
-    (1...numbers_array.length).each do |next_to_sort|
+  def self.sort!(numbers)
+    (1...numbers.length).each do |next_to_sort|
       next_to_sort.downto(1) do |cur|
-        swap!(numbers_array, cur - 1, cur) if numbers_array[cur - 1] > numbers_array[cur]
+        swap!(numbers, cur - 1, cur) if numbers[cur - 1] > numbers[cur]
       end
     end
-    numbers_array
+    numbers
   end
 
-  private
-
-  def self.swap!(numbers_array, i1, i2)
-    numbers_array[i1], numbers_array[i2] = numbers_array[i2], numbers_array[i1]
+  def self.swap!(numbers, i1, i2)
+    numbers[i1], numbers[i2] = numbers[i2], numbers[i1]
   end
 end

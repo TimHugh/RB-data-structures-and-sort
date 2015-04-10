@@ -1,7 +1,7 @@
 class MergeSort
   def self.sort(numbers_array)
     # start with an array of arrays
-    array = numbers_array.map{ |n| [n] }
+    array = numbers_array.map { |n| [n] }
     # loop through and merge pairs until there is only one array left
     while array.size > 1
       new_array = []
@@ -15,15 +15,14 @@ class MergeSort
     array.first
   end
 
-  private
-
   def self.merge(set1, set2)
     result = []
-    # until one of the sets runs out, add the lower of the two first elements from each set to the return array
+    # until one of the sets runs out, add the lower of the two first elements
+    # from each set to the return array
     until set1.empty? || set2.empty?
       result << (set1.first <= set2.first ? set1.shift : set2.shift)
     end
     # dump the remaining elements into the return array
-    result += set1 + set2
+    result + set1 + set2
   end
 end
