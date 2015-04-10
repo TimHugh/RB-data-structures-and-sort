@@ -24,7 +24,7 @@ describe LinkedList do
 
   it 'correctly removes values' do
     @list.remove(4)
-    @list.to_s.must_equal "7, 2"
+    @list.to_s.must_equal '7, 2'
   end
 
   it 'returns a value when it removes it from the list' do
@@ -36,6 +36,6 @@ describe LinkedList do
   end
 
   it 'creates a comma-separated string when the to_s function is called' do
-    @list.to_s.must_equal "7, 4, 2"
+    @list.to_s.must_equal '7, 4, 2'
   end
 end

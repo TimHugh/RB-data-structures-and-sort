@@ -36,9 +36,9 @@ class LinkedList
   end
 
   def to_s
-    string = ""
+    string = ''
     string += @value.to_s if @value
-    string += ", " if @value && @next
+    string += ', ' if @value && @next
     string += @next.to_s if @next
     string
   end
