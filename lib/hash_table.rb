@@ -1,5 +1,6 @@
 class HashTable
   attr_reader :size
+
   Node = Struct.new(:key, :value, :next, :length)
 
   def initialize
@@ -30,6 +31,25 @@ class HashTable
   end
 
   def remove(key)
+    hash = keyToHash key
+
+    node = @table[hash]
+    return if node.nil?
+    if node.key == key
+      @table[hash] = node.next
+      @size -= 1
+      return node.value
+    end
+
+    while node.next && node.next.key != key
+      node = node.next
+    end
+    return if node.nil?
+
+    out = node.next.value
+    node.next = node.next.next
+    @size -= 1
+    out
   end
 
   def keyToHash(key)
