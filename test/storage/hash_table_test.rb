@@ -15,6 +15,15 @@ describe HashTable do
     value.must_equal (':'.ord + 'o'.ord + 'n'.ord + 'e'.ord)
   end
 
+  it 'correctly reports size' do
+    @hashtable[:one] = "test value"
+    @hashtable.size.must_equal 1
+    @hashtable[:two] = "another test value"
+    @hashtable.size.must_equal 2
+    @hashtable[:two] = nil
+    @hashtable.size.must_equal 1
+  end
+
   it 'can store and recall values' do
     skip
 
