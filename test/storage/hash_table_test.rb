@@ -25,8 +25,6 @@ describe HashTable do
   end
 
   it 'can store and recall values' do
-    skip
-
     @hashtable[:one] = "test value"
     @hashtable[:one].must_equal "test value"
   end
