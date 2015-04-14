@@ -24,4 +24,8 @@ describe Queue do
     @queue.dequeue.must_equal 2
     @queue.dequeue.must_equal 3
   end
+
+  it 'returns nil when dequeueing an empty queue' do
+    @queue.dequeue.must_equal nil
+  end
 end
