@@ -18,9 +18,11 @@ class Queue
   end
 
   def dequeue
+    return nil if @head.nil?
+
     node = @head
+    @head.prev = nil
     @head = @head.next
-    @head.prev = nil if @head
     @size -= 1
     node.value
   end
