@@ -6,7 +6,8 @@ describe BinaryTree do
     @tree = BinaryTree.new
   end
 
-  it 'starts empty' do
-    @tree.size.must_equal 0
+  it 'holds a root node' do
+    @tree.root = BinaryTree::Node.new('Root')
+    @tree.root.value.must_equal 'Root'
   end
 end

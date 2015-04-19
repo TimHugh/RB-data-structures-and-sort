@@ -1,7 +1,5 @@
 class BinaryTree
-  attr_reader :size
+  attr_accessor :root
 
-  def initialize
-    @size = 0
-  end
+  Node = Struct.new(:value, :left, :right)
 end
