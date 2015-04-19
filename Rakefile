@@ -59,21 +59,21 @@ namespace :benchmark do
       end
 
       average_word_length = words.inject(0.0) { |a, e| a + e.size } / words.size
-      puts "######## DICTIONARY ########"
+      puts '######## DICTIONARY ########'
       puts "Average word length: #{average_word_length}"
 
       Benchmark.bmbm do |x|
-        x.report("Hash Table (100 rows) - fill") do
+        x.report('Hash Table (100 rows) - fill') do
           words.each { |word| hash100[word] = word.reverse }
         end
-        x.report("Hash Table (100 rows) - recall") do
+        x.report('Hash Table (100 rows) - recall') do
           words.each { |word| hash100[word] }
         end
 
-        x.report("Hash Table (1000 rows) - fill") do
+        x.report('Hash Table (1000 rows) - fill') do
           words.each { |word| hash1000[word] = word.reverse }
         end
-        x.report("Hash Table (1000 rows) - recall") do
+        x.report('Hash Table (1000 rows) - recall') do
           words.each { |word| hash1000[word] }
         end
       end

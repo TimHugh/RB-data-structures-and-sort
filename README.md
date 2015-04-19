@@ -37,3 +37,7 @@ The queue is similar to a stack, but uses the FIFO method with `enqueue(value)` 
 
 A hash table allows an infinite keyspace, and allows storage in `O (1)` time. Retrieval varies depending on implementation (in this case, it's a table of linked lists) but is `O (1)` at best and `O (n)` at worst.
 Infinite keyspace is achieved by generating a "fairly unique" hash from the key and mapping it to a table. The execution time is inversely proportional to the size of the table, and consequently is inversely proportional to memory usage.
+
+### [Binary Tree](): `lib/binary_tree.rb`
+
+A binary tree is a special tree where every node must have between 0 and 2 children. This particular implementation is less traditional, and is based more on a DOM-like structure.
