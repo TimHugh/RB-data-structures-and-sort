@@ -35,6 +35,8 @@ class BinaryTree
       case order
       when :inorder
         return @left.to_a(order) + [@value] + @right.to_a(order)
+      when :preorder
+        return [@value] + @left.to_a(order) + @right.to_a(order)
       end
     end
   end
