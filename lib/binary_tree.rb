@@ -37,7 +37,7 @@ class BinaryTree
         return @left.to_a(order) + @right.to_a(order) + [@value]
       when :preorder
         return [@value] + @left.to_a(order) + @right.to_a(order)
-      when :inorder
+      else
         return @left.to_a(order) + [@value] + @right.to_a(order)
       end
     end
