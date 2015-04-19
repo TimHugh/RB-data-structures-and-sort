@@ -1,6 +1,15 @@
 require 'test_helper'
 require 'binary_tree'
 
+def fill_tree(tree)
+    tree.root = BinaryTree::Node.new('Tim')
+    tree.root.add('Jony', 'Phil')
+    tree.find('Jony').add('Dan', 'Katie')
+    tree.find('Phil').add('Craig', 'Eddie')
+    tree.find('Katie').add('Peter', 'Andrea')
+    return tree
+end
+
 describe BinaryTree do
   before do
     @tree = BinaryTree.new
@@ -18,11 +27,12 @@ describe BinaryTree do
   end
 
   it 'can be traversed in-order' do
-    @tree.root = BinaryTree::Node.new('Tim')
-    @tree.root.add('Jony', 'Phil')
-    @tree.find('Jony').add('Dan', 'Katie')
-    @tree.find('Phil').add('Craig', 'Eddie')
-    @tree.find('Katie').add('Peter', 'Andrea')
+    fill_tree(@tree)
     @tree.to_s.must_equal "Dan, Jony, Peter, Katie, Andrea, Tim, Craig, Phil, Eddie"
+  end
+
+  it 'can be traversed pre-order' do
+    fill_tree(@tree)
+    @tree.to_s(:preorder).must_equal "Tim, Jony, Dan, Katie, Peter, Andrea, Phil, Craig, Eddie"
   end
 end
