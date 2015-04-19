@@ -3,7 +3,7 @@ class BinaryTree
 
   class NullNode
     def to_a(order)
-      return []
+      []
     end
 
     def nil?
@@ -34,11 +34,11 @@ class BinaryTree
     def to_a(order)
       case order
       when :postorder
-        return @left.to_a(order) + @right.to_a(order) + [@value]
+        @left.to_a(order) + @right.to_a(order) + [@value]
       when :preorder
-        return [@value] + @left.to_a(order) + @right.to_a(order)
+        [@value] + @left.to_a(order) + @right.to_a(order)
       else
-        return @left.to_a(order) + [@value] + @right.to_a(order)
+        @left.to_a(order) + [@value] + @right.to_a(order)
       end
     end
   end
@@ -46,7 +46,7 @@ class BinaryTree
   def find(value, cur_node = @root)
     return nil if cur_node.nil?
     return cur_node if cur_node.value == value
-    return find(value, cur_node.left) || find(value, cur_node.right)
+    find(value, cur_node.left) || find(value, cur_node.right)
   end
 
   def to_s(order = :inorder)
