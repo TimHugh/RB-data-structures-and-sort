@@ -2,7 +2,7 @@ class BinaryTree
   attr_accessor :root
 
   class NullNode
-    def to_a(order)
+    def to_a(_order)
       []
     end
 
@@ -26,7 +26,7 @@ class BinaryTree
         elsif @right.nil?
           @right = Node.new(val)
         else
-          raise "Node already has two children"
+          fail 'Node already has two children'
         end
       end
     end
