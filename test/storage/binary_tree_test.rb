@@ -35,4 +35,9 @@ describe BinaryTree do
     fill_tree(@tree)
     @tree.to_s(:preorder).must_equal "Tim, Jony, Dan, Katie, Peter, Andrea, Phil, Craig, Eddie"
   end
+
+  it 'can be traversed post-order' do
+    fill_tree(@tree)
+    @tree.to_s(:postorder).must_equal "Dan, Peter, Andrea, Katie, Jony, Craig, Eddie, Phil, Tim"
+  end
 end
