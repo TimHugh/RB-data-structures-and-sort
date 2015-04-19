@@ -33,10 +33,12 @@ class BinaryTree
 
     def to_a(order)
       case order
-      when :inorder
-        return @left.to_a(order) + [@value] + @right.to_a(order)
+      when :postorder
+        return @left.to_a(order) + @right.to_a(order) + [@value]
       when :preorder
         return [@value] + @left.to_a(order) + @right.to_a(order)
+      when :inorder
+        return @left.to_a(order) + [@value] + @right.to_a(order)
       end
     end
   end
