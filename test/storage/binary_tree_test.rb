@@ -16,4 +16,13 @@ describe BinaryTree do
     @tree.root = BinaryTree::Node.new('Root')
     @tree.find('Root').value.must_equal 'Root'
   end
+
+  it 'can be traversed in-order' do
+    @tree.root = BinaryTree::Node.new('Tim')
+    @tree.root.add('Jony', 'Phil')
+    @tree.find('Jony').add('Dan', 'Katie')
+    @tree.find('Phil').add('Craig', 'Eddie')
+    @tree.find('Katie').add('Peter', 'Andrea')
+    @tree.to_s.must_equal "Dan, Jony, Peter, Katie, Andrea, Tim, Craig, Phil, Eddie"
+  end
 end
